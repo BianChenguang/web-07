@@ -35,8 +35,8 @@ div{
 }
 .box{
 	width: 1200px;
-	height: 382px;
-	border: 1px solid red;
+	height: 397px;
+	/* border: 1px solid red; */
 	margin: 100px auto;
 	position: relative;
 	overflow: hidden;
@@ -65,12 +65,12 @@ div{
 	float: right;
 }
 .slider{
-	width:12480px;
+	width:8400px;
 	position: absolute;
-	left: -1960px;
+	left: -1200px;
 }
 .slide{
-	width:1600px ;
+	width:1200px;
 	overflow: hidden;
 	float: left;
 }
@@ -108,12 +108,12 @@ div{
 	margin: 0 10px;
 	border-radius: 50%;
 }
-.active{
+.nav .active{
 	color: white;
-	background:rgb(225,69,53);
+	background-color:rgb(225,69,53);
 
 }
-.nav .active:hover{
+/* .nav .active:hover{
 	color: white;
 	background:rgb(225,69,53) 
-} 
+}  */
