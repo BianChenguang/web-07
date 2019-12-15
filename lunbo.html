@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<script src="animate.js"></script>
+</head>
+<body>
+
+	<div class="broadcast">
+		
+		<div class="broad">
+			<img class="img1" src="images/a15.png" alt="">
+			<marquee class="dong"><font color=red>[温馨提示]：最近有不少非法分子在网上骗人，请大家注意！！！</font></marquee>
+<!-- 			<span class="tip1">
+				[温馨提示]：最近有不少非法分子在网上骗人，请大家注意！！！
+			</span>
+			<span class="tip1">
+				[温馨提示]：最近有不少非法分子在网上骗人，请大家注意！！！
+			</span>
+			<span class="tip2">
+				[温馨提示]：最近有不少非法分子在网上骗人，请大家注意！！！
+			</span> -->
+		</div>
+	</div>
+	<div class="box" id="box">
+		<div class="slider" id="slider">
+			<div class="slide"><img src="images/b5.png" alt=""></div>
+			<div class="slide"><img src="images/b1.png" alt=""></div>
+			<div class="slide"><img src="images/b2.png" alt=""></div>
+			<div class="slide"><img src="images/b3.png" alt=""></div>
+			<div class="slide"><img src="images/b4.png" alt=""></div>
+			<div class="slide"><img src="images/b5.png" alt=""></div>
+			<div class="slide"><img src="images/b1.png" alt=""></div>
+		</div>
+		<span id="left"><</span>
+		
+		<span id="right">></span>
+		<ul class="nav" id="nav">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+</body>
+<script>
+	var box=document.getElementById('box');
+	var oNavlist =document.getElementById('nav').children;
+	var slider=document.getElementById('slider');
+	var left =document.getElementById('left');
+	var right =document.getElementById('right');
+	var index=0;
+
+	var timer;
+	var isMoving =false;
+	var arr=[-1920,-3520,-5000,-6400,-8200];
+	// window.onload=function(){
+	// 	animate(, speed)
+	// }
+	// 
+
+	function next(){
+		if(isMoving){
+			return;
+		}
+		isMoving=false;
+		index++;
+		console.log(index);
+		navChange(index);
+		if(index<=5){
+			animate(slider,{left:arr[index]},function(){
+			
+			isMoving=true;
+		});	
+		}
+		if(index===5){
+				slider.style.left="-1920px";
+				index=0;
+			}		
+	}
+	function prev(){
+		if(isMoving){
+			return;
+		}
+		isMoving=false;
+		index--;
+		console.log(index);
+		navChange(index);
+
+		if(index>=0){
+			animate(slider,{left:arr[index]},function(){
+			isMoving=true;
+			});
+		}
+		if(index<=-1){
+			slider.style.left="-8200px";
+			index=4;
+		}
+				
+	}
+
+	var timer=setInterval(next,3000);
+
+	box.onmouseover=function(){
+		animate(left,{opacity:50});
+		animate(right,{opacity:50});
+		clearInterval(timer);;
+	}
+	box.onmouseout=function(){
+		animate(left,{opacity:0});
+		animate(right,{opacity:0});
+		timer=setInterval(next,2000);
+	}
+
+	right.onclick=next;
+	left.onclick=prev;
+	
+
+	for (var i = 0; i<oNavlist.length; i++) {
+		oNavlist[i].idx=i;
+		oNavlist[i].onclick=function(){
+			index=this.idx;
+			navChange(index);
+			animate(slider,{left:arr[index]});
+			//animate(slider,{right:arr[index]});
+		}
+	}
+
+	function navChange(index){
+		for (var i = 0; i<oNavlist.length; i++) {
+			oNavlist[i].className=' ';
+		}
+		if(index>=5){
+			oNavlist[0].className='active';
+		}else if(index===-1){
+			oNavlist[4].className='active';
+		}else{
+			oNavlist[index].className='active';
+		}
+	}
+
+
+
+</script>
+</html>

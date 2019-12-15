@@ -1,0 +1,119 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+li{
+	list-style-type: none;
+	text-align: center;
+}
+div{
+	display: block;
+}
+.broadcast{
+	height: 20px;
+	background-color: rgb(125, 125, 125);
+	position: static;
+}
+
+.broad{
+	width: 1000px;
+	height: 20px;
+	margin: 0 auto;
+
+}
+.broad>span{
+	display: inline-block;
+	color: red;
+	float: right;
+	overflow: hidden;
+}
+.tip1{
+	opacity: 0;
+}
+.img1{
+	position: absolute;
+}
+.box{
+	width: 1200px;
+	height: 382px;
+	border: 1px solid red;
+	margin: 100px auto;
+	position: relative;
+	overflow: hidden;
+}
+/* .broad{
+	overflow: hidden;
+	background: rgb(125,125,125);
+}
+
+.broadcast{
+	height: 20px;
+	width: 1000px;
+	margin: 0 auto;
+}
+.tip{
+	color: red;
+	display: inline-block;
+	width: 480px;
+	overflow: hidden;
+	float: right;
+
+} */
+.dong{
+	width: 980px;
+	display: inline-block;
+	float: right;
+}
+.slider{
+	width:12480px;
+	position: absolute;
+	left: -1960px;
+}
+.slide{
+	width:1600px ;
+	overflow: hidden;
+	float: left;
+}
+.box>span{
+	display: block;
+	width: 30px;
+	height: 50px;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+	top: 175px;
+	line-height: 50px;
+	background-color: rgb(255, 0, 0);
+	font-size: 30px;
+	position: absolute;
+	opacity: 0;
+}
+#left{
+	left: 30px;
+}
+#right{
+	right: 30px;
+}
+.nav{
+	position: absolute;
+	left: 500px;
+	bottom: 20px;
+}
+.nav>li{
+	float: left;
+	width: 20px;
+	height: 20px;
+	background: #ccc;
+	cursor: pointer;
+	margin: 0 10px;
+	border-radius: 50%;
+}
+.active{
+	color: white;
+	background:rgb(225,69,53);
+
+}
+.nav .active:hover{
+	color: white;
+	background:rgb(225,69,53) 
+} 
